@@ -1,8 +1,8 @@
 <!doctype html>
-<html ng-app="homePageSrc" ng-strict-di>
+<html ng-app="igola" ng-strict-di>
   <head>
     <meta charset="utf-8">
-    <title>homePageSrc</title>
+    <title>userInfoManage</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,11 +18,20 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
+
+    <!--[if lte IE 8]>
+    <script src="//cdn.bootcss.com/es5-shim/4.1.15/es5-shim.min.js"></script>
+    <script src="//cdn.bootcss.com/es5-shim/4.1.15/es5-sham.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+
 
     <div ui-view></div>
 
@@ -41,18 +50,6 @@
     <!-- angular templates will be automatically converted in js and inserted here -->
     <!-- endinject -->
     <!-- endbuild -->
-
-
-    <!-- Begin Inspectlet Embed Code -->
-    <script type="text/javascript" id="inspectletjs">
-      window.__insp = window.__insp || [];
-      __insp.push(['wid', 705781069]);
-      (function() {
-        function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-        setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
-      })();
-    </script>
-    <!-- End Inspectlet Embed Code -->
 
   </body>
 </html>

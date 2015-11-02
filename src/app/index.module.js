@@ -1,24 +1,9 @@
-/* global malarkey:false, moment:false */
-
-import { config } from './index.config';
+import './module-init';
+import {config} from './index.config';
 import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
-import { MainController } from './main/main.controller';
-import { NewPageController } from './newPage/new-page.controller';
-import { GithubContributorService } from '../app/components/githubContributor/githubContributor.service';
-import { WebDevTecService } from '../app/components/webDevTec/webDevTec.service';
-import { NavbarDirective } from '../app/components/navbar/navbar.directive';
-import { MalarkeyDirective } from '../app/components/malarkey/malarkey.directive';
 
-angular.module('homePageSrc', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ngMaterial', 'toastr'])
-  .constant('malarkey', malarkey)
-  .constant('moment', moment)
+angular.module('igola')
   .config(config)
   .config(routerConfig)
-  .run(runBlock)
-  .service('githubContributor', GithubContributorService)
-  .service('webDevTec', WebDevTecService)
-  .controller('MainController', MainController)
-  .controller('NewPageController', NewPageController)
-  .directive('acmeNavbar', NavbarDirective)
-  .directive('acmeMalarkey', MalarkeyDirective);
+  .run(runBlock);

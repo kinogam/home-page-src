@@ -1,12 +1,21 @@
-export function config ($logProvider, toastrConfig) {
+export function config ($translateProvider) {
   'ngInject';
-  // Enable log
-  $logProvider.debugEnabled(true);
 
-  // Set options third-party lib
-  toastrConfig.allowHtml = true;
-  toastrConfig.timeOut = 3000;
-  toastrConfig.positionClass = 'toast-top-right';
-  toastrConfig.preventDuplicates = true;
-  toastrConfig.progressBar = true;
+  $translateProvider.useStaticFilesLoader({
+    prefix: '/assets/i18n/',
+    suffix: '.json' + '?t=' + getStamp()
+  });
+
+  $translateProvider.preferredLanguage('ZH');
+}
+
+function getStamp() {
+  var d = new Date(),
+    m_str = '0' + (d.getMonth() + 1),
+    d_str = '0' + (d.getDate() + 1);
+
+  m_str = m_str.substr(m_str.length - 2, 2);
+  d_str = d_str.substr(d_str.length - 2, 2);
+
+  return d.getFullYear() + m_str + d_str;
 }

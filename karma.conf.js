@@ -18,14 +18,12 @@ function listFiles() {
 
   return wiredep(wiredepOptions).js
     .concat([
-      path.join(conf.paths.tmp, '/serve/app/index.module.js'),
+      path.join(conf.paths.tmp, '/serve/public/index.module.js'),
     ])
     .concat(pathSrcHtml);
 }
 
 module.exports = function(config) {
-
-  console.log(listFiles());
 
   var configuration = {
     files: listFiles(),
@@ -36,7 +34,7 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: conf.paths.src + '/',
-      moduleName: 'homePageSrc'
+      moduleName: 'userInfoManage'
     },
 
     logLevel: 'WARN',

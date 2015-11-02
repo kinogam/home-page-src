@@ -1,17 +1,21 @@
+import './routes/main/main.controller';
+import './routes/message/message.controller';
+
 export function routerConfig ($stateProvider, $urlRouterProvider) {
   'ngInject';
+
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'app/main/main.html',
+      templateUrl: 'app/routes/main/main.html',
       controller: 'MainController',
       controllerAs: 'main'
     })
-    .state('new-page', {
-      url: '/new-page',
-      templateUrl: 'app/newPage/new-page.html',
-      controller: 'NewPageController',
-      controllerAs: 'newPage'
+    .state('home.message', {
+      url: 'message/',
+      templateUrl: 'app/routes/message/message.html',
+      controller: 'MessageController',
+      controllerAs: 'message'
     });
 
   $urlRouterProvider.otherwise('/');

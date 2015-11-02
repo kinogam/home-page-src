@@ -13,7 +13,7 @@ function webpackWrapper(watch, test, callback) {
   var webpackOptions = {
     watch: watch,
     module: {
-      preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'eslint-loader'}],
+     // preLoaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'eslint-loader'}],
       loaders: [{ test: /\.js$/, exclude: /node_modules/, loaders: ['ng-annotate', 'babel-loader']}]
     },
     output: { filename: 'index.module.js' }
@@ -47,7 +47,7 @@ function webpackWrapper(watch, test, callback) {
 
   return gulp.src(sources)
     .pipe(webpack(webpackOptions, null, webpackChangeHandler))
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/public')));
 }
 
 gulp.task('scripts', function () {
